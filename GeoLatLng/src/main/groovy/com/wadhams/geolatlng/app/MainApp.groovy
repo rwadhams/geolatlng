@@ -3,7 +3,6 @@ package com.wadhams.geolatlng.app
 import com.wadhams.geolatlng.geo.GeoPosition
 import com.wadhams.geolatlng.geo.Proximity
 import com.wadhams.geolatlng.type.Direction
-import com.wadhams.geolatlng.util.GeoLatLng
 
 class MainApp {
 	static main(args) {

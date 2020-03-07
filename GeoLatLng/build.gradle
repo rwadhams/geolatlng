@@ -1,9 +1,13 @@
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
 
 repositories {
 	mavenCentral()
 }
+
+group = 'com.wadhams.geolatlng'
+version = '1.0'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -21,6 +25,14 @@ dependencies {
 	compile 'org.spockframework:spock-core:1.0-groovy-2.4' // mandatory for using Spock depends on groovy-all-2.4.x
 	testRuntime 'cglib:cglib-nodep:3.1'          // allows mocking of classes (in addition to interfaces) in Spock
 	testRuntime 'org.objenesis:objenesis:2.1'    // allows mocking of classes without default constructor (together with CGLIB) in Spock
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
 }
 
 task wrapper(type: Wrapper) {

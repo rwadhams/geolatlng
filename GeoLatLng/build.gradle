@@ -3,10 +3,12 @@ plugins {
     id 'groovy'
 
     id 'eclipse'
+	
 	id 'maven-publish'
 }
 
 repositories {
+	mavenLocal()
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
@@ -15,11 +17,11 @@ repositories {
 group = 'com.wadhams.geolatlng'
 version = '1.0'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility=18
+targetCompatibility=18
 
 dependencies {
-	compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
+	implementation 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
 	
 	// Use the latest Groovy version for building this library
 	implementation 'org.codehaus.groovy:groovy-all:3.0.9'
